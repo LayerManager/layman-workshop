@@ -6,6 +6,7 @@ install:
 before_deploy:
 - mkdir -p build
 - reveal-md slides/ --css slides/theme/custom.css -w --static build
+- touch build/.nojekyll
 - ls -l build
 deploy:
   provider: pages
