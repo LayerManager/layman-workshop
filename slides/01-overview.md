@@ -48,6 +48,21 @@ January 29, 2020
 * automation and optimization
 
 ---
+## Workshop 4
+<ul style="font-size: 80%">
+<li>Karel Charvát - Purpose of workshop</li>
+<li style="color: orange">Jiří Kozel - What is Layman and how it works</li>
+<li>Raitis Berzins - Map composition</li>
+<li>Jiří Kozel, Jiří Kvapil - How to install Layman in cloud</li>
+<li>Jiří Kozel - Layman API</li>
+<li>Jiří Kozel - Authentication and authorization</li>
+<li>Jiří Kozel - Interaction with Metadata (Micka)</li>
+<li>Jan Vrobel - QGIS plugins for accessing maps and map composition from server</li>
+<li>Jan Vrobel - QGIS plugin for Web data publishing using Layman</li>
+<li>Raitis Berzins - HSLayers NG as client for Layman</li>
+</ul>
+
+---
 ## What is Layman?
 
 Ask <span style="text-decoration: line-through;">Google</span> DuckDuckGo! 
@@ -122,6 +137,3 @@ Layman`s **security system** uses two well-known concepts: authentication and au
 ## Layman Key Features
 - Layman stands on the shoulders of widely used programs like Flask, PostgreSQL, PostGIS, GDAL, GeoServer, Celery, and Redis.
 
----
-## WARNING!
-### The presentation is going to be <span style="color: orange;">technical</span>!
