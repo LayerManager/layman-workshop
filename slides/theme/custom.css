@@ -1,0 +1,11 @@
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    text-transform: initial;
+}
+
+.reveal ul ul {
+    list-style-type: circle;
+}
+
+.reveal ul ul {
+    font-size: 90%;
+}
