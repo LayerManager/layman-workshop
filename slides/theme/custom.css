@@ -9,3 +9,7 @@
 .reveal ul ul {
     font-size: 90%;
 }
+
+.reveal strong {
+    color: #c8d0d0;
+}

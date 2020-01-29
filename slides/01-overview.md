@@ -22,7 +22,7 @@ January 29, 2020
 ---
 ## About Me
 
-* 15 years of work experience in the field
+* 14 years of work experience in geoinformatics
 * started at Masaryk University
   * GIS specialist
   * software developer
@@ -46,9 +46,15 @@ January 29, 2020
 * web systems
 * maps
 * automation and optimization
+<br />
+<br />
+* open-source tools
+* pen & paper
 
 ---
 ## Workshop 4
+[https://github.com/jirik/layman-workshop](https://github.com/jirik/layman-workshop)
+
 <ul style="font-size: 80%">
 <li>Karel Charvát - Purpose of workshop</li>
 <li style="color: orange">Jiří Kozel - What is Layman and how it works</li>
@@ -136,4 +142,22 @@ Layman`s **security system** uses two well-known concepts: authentication and au
 <!--v-->
 ## Layman Key Features
 - Layman stands on the shoulders of widely used programs like Flask, PostgreSQL, PostGIS, GDAL, GeoServer, Celery, and Redis.
+
+---
+## Layman's Magic
+1. wait till all data is uploaded
+1. start asynchronous tasks
+  1. import vector data into PostgreSQL
+  1. publish vector data to GeoServer (WMS, WFS)
+  1. publish style to GeoServer (SLD, SE)
+  1. generate thumbnail
+  1. publish metadata to Micka (CSW)
+
+---
+## What is Layman?
+### Summary
+- web service for publishing geospatial data online through REST API
+- developed since 2018 as part of Databio and Sieusoil projects
+- written in Python, published under GNU-GPL license at GitHub
+- [https://github.com/jirik/layman](https://github.com/jirik/layman)
 

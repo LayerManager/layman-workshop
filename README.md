@@ -17,14 +17,15 @@ It's recommended to bring
 
 Knowledge of [basic bash commands](http://cheatsheetworld.com/programming/unix-linux-cheat-sheet/) is a plus, but not necessary.
 
-## Slides
-- [What is Layman and how it works]()
-- [How to install Layman]()
-- [Layman's REST API]()
-- [Authentication and authorization]()
-- [Interaction with Metadata (Micka)]()
-
 ## Content
 - [Connect to your remote machine](01-connect.md)
 - [Install Layman](02-install.md)
 - [Layman's REST API](03-rest-api.md)
+
+## Slides
+- [What is Layman and how it works](https://jirik.github.io/layman-workshop/01-overview.html)
+- [How to install Layman](https://jirik.github.io/layman-workshop/02-install.html)
+- [Layman's REST API](https://jirik.github.io/layman-workshop/03-rest.html)
+- [Authentication and authorization]()
+- [Interaction with Metadata (Micka)]()
+
