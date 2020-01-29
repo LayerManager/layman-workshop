@@ -107,15 +107,23 @@ CSW_RECORD_URL=http://123.124.125.126:3080/record/basic/{identifier}
 
 Press `Ctrl+O` to save file, confirm with pressing `Enter`, and then `Ctrl+X` to exit nano.
 
+## Build Layman
+
+```bash
+$ make build-demo
+docker-compose -f docker-compose.deps.demo.yml -f docker-compose.demo.yml build layman layman_client geoserver hslayers
+...
+Successfully built fbafaabc8386
+Successfully tagged layman:latest
+# takes about 5 minutes
+```
+
 ## Prepare GeoServer
 ```bash
-# 1. download geoserver and prepare its data directory
+# 1. prepare geoserver data directory
 $ make geoserver-reset-default-layman-datadir
-docker-compose -f docker-compose.deps.yml run --rm --no-deps geoserver bash /geoserver_code/reset-default-layman-datadir.sh
-...
-Successfully built abba31808665
-Successfully tagged layman_geoserver:latest
-WARNING: Image for service geoserver was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Creating network "layman_default" with the default driver
+Creating volume "layman_redis-data" with default driver
 
 # 2. check that data directory with layman user was created
 $ cat deps/geoserver/data/security/usergroup/default/users.xml
@@ -135,7 +143,7 @@ $ cat deps/geoserver/data/security/usergroup/default/users.xml
 $ make start-demo-full-d
 docker-compose -f docker-compose.deps.demo.yml -f docker-compose.demo.yml up -d --force-recreate postgresql geoserver redis layman celery_worker flower hslayers layman_client micka nginx
 ...
-# takes about 5 minutes
+# takes about 2 minutes
 Creating hslayers            ... done
 Creating layman_postgresql_1 ... done
 Creating layman_redis_1      ... done
