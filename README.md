@@ -28,5 +28,5 @@ Knowledge of [basic bash commands](http://cheatsheetworld.com/programming/unix-l
 - [How to install Layman](https://jirik.github.io/layman-workshop/02-install.html)
 - [Layman's REST API](https://jirik.github.io/layman-workshop/03-rest.html)
 - [Authentication and authorization](https://jirik.github.io/layman-workshop/04-security.html)
-- [Interaction with Metadata (Micka)]()
+- [Interaction with Metadata (Micka)](https://jirik.github.io/layman-workshop/05-micka.html)
 
