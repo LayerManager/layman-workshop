@@ -2,6 +2,8 @@
 
 We will work on remote machines with Linux operating system during the workshop to ensure suitable and consistent environment.
 
+[Register your SSH Key](https://docs.google.com/spreadsheets/d/1Imf7Wc1vGzprdjqVSuEhDQ9ZlZ9ufn1GEx48fQllx1k/edit#gid=0)
+
 ## Preconditions
 It's recommended to bring
 - Your own laptop with SSH client
