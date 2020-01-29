@@ -21,6 +21,8 @@ January 29, 2020
 
 ---
 ## Workshop 4
+[https://github.com/jirik/layman-workshop](https://github.com/jirik/layman-workshop)
+
 <ul style="font-size: 80%">
 <li>Karel Charvát - Purpose of workshop</li>
 <li>Jiří Kozel - What is Layman and how it works</li>
@@ -69,6 +71,7 @@ In case of Layman
 - **Map**
   - `/rest/<username>/maps`
   - `/rest/<username>/maps/<mapname>`
+- [detailed documentation](https://github.com/jirik/layman/blob/master/doc/rest.md#overview)
 
 <!--v-->
 ## Layman REST API Resources
@@ -82,7 +85,7 @@ In case of Layman
 ## Layman REST API Resources
 - `layername`, `mapname`
   - unique identification of layer (map) within all layers (maps) of given user
-  - it is chosen or automatically generated when the layer is published
+  - it is either chosen or automatically generated when the layer (map) is published
   - it can not be changed
 
 ---

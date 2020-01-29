@@ -21,6 +21,8 @@ January 29, 2020
 
 ---
 ## Workshop 4
+[https://github.com/jirik/layman-workshop](https://github.com/jirik/layman-workshop)
+
 <ul style="font-size: 80%">
 <li>Karel Charvát - Purpose of workshop</li>
 <li>Jiří Kozel - What is Layman and how it works</li>
@@ -40,7 +42,7 @@ January 29, 2020
 
 ---
 ## Steps
-1. Provide your public SSH key
+1. Provide your **public SSH key**
 1. Connect to your remote machine
 1. Install requirements
 1. Install Layman
