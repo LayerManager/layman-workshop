@@ -21,11 +21,12 @@ Knowledge of [basic bash commands](http://cheatsheetworld.com/programming/unix-l
 - [Connect to your remote machine](01-connect.md)
 - [Install Layman](02-install.md)
 - [Layman's REST API](03-rest-api.md)
+- [Authentication and authorization](04-security.md)
 
 ## Slides
 - [What is Layman and how it works](https://jirik.github.io/layman-workshop/01-overview.html)
 - [How to install Layman](https://jirik.github.io/layman-workshop/02-install.html)
 - [Layman's REST API](https://jirik.github.io/layman-workshop/03-rest.html)
-- [Authentication and authorization]()
+- [Authentication and authorization](https://jirik.github.io/layman-workshop/04-security.html)
 - [Interaction with Metadata (Micka)]()
 
