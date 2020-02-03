@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>What is Layman and how it works</title>
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/theme/moon.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/tomorrow-night-bright.css" />
+    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="./_assets/slides/theme/custom.css" />
+
+    <script>
+      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+## What is Layman and How it Works
+
+### Jiří Kozel
+
+Workshop 4
+
+<small>Big and Open Data and Innovative Hubs in Agriculture, Transport and Rural Development
+<br/>
+<br/>
+Czech University of Life Sciences, Prague
+<br/>
+<br/>
+January 29, 2020
+</small>
+</script></section><section ><section data-markdown><script type="text/template">## About Me
+
+* 14 years of work experience in geoinformatics
+* started at Masaryk University
+  * GIS specialist
+  * software developer
+  * system analyst
+  * leader of GIS group @ Institute of Computer Science
+
+</script></section><section data-markdown><script type="text/template">
+## About Me
+
+* full-time **freelancer** since 2016 
+  * maitainer of OpenMapTiles for 2 years
+  * BrnoUrganGrid
+  * technical leader of GIS4DIS project
+  * Layman
+
+</script></section><section data-markdown><script type="text/template">
+## About Me
+
+* geospatial data
+* data modeling, analysis, and processing
+* web systems
+* maps
+* automation and optimization
+<br />
+<br />
+* open-source tools
+* pen & paper
+</script></section></section><section  data-markdown><script type="text/template">## Workshop 4
+[https://github.com/jirik/layman-workshop](https://github.com/jirik/layman-workshop)
+
+<ul style="font-size: 80%">
+<li>Karel Charvát - Purpose of workshop</li>
+<li style="color: orange">Jiří Kozel - What is Layman and how it works</li>
+<li>Raitis Berzins - Map composition</li>
+<li>Jiří Kozel, Jiří Kvapil - How to install Layman in cloud</li>
+<li>Jiří Kozel - Layman API</li>
+<li>Jiří Kozel - Authentication and authorization</li>
+<li>Jiří Kozel - Interaction with Metadata (Micka)</li>
+<li>Jan Vrobel - QGIS plugins for accessing maps and map composition from server</li>
+<li>Jan Vrobel - QGIS plugin for Web data publishing using Layman</li>
+<li>Raitis Berzins - HSLayers NG as client for Layman</li>
+</ul>
+</script></section><section ><section data-markdown><script type="text/template">## What is Layman?
+
+Ask <span style="text-decoration: line-through;">Google</span> DuckDuckGo! 
+
+</script></section><section data-markdown><script type="text/template">
+## Jake Layman
+
+![Jake Layman](img/jake-layman.jpeg)
+
+</script></section><section data-markdown><script type="text/template">
+## layman
+
+> someone who is **not a professional** in a given field
+
+<small>from Wikitionary</small>
+
+</script></section><section data-markdown><script type="text/template">
+## So the Layman is not so famous...
+### ...yet! 
+</script></section></section><section ><section data-markdown><script type="text/template">## What is Layman?
+- web service for publishing geospatial data online through REST API
+- developed since 2018 as part of Databio and Sieusoil projects
+- written in Python, published under GNU-GPL license at GitHub
+- [https://github.com/jirik/layman](https://github.com/jirik/layman)
+
+</script></section><section data-markdown><script type="text/template">
+## How Layman Works?
+1. Input
+    * vector data in **GeoJSON** or **ShapeFile** format
+    * cartographic style  in OGC Styled Layer Descriptor or Symbology Encoding format
+2. **<span style="color: orange">Layman's Magic</span>**
+3. Output
+    * standardized OGC APIs
+      * Web Map Service
+      * Web Feature Service
+      * Catalogue Service
+</script></section></section><section ><section data-markdown><script type="text/template">## Layman Key Features
+Layman supports two main models of geospatial data:
+
+- **Layer** is created from combination of vector data (GeoJSON or ShapeFile) and visualization (SLD or SE style).
+
+- **Map** is collection of layers described in JSON format. Also known as **map composition**.
+
+</script></section><section data-markdown><script type="text/template">
+## Layman Key Features
+There are **multiple client applications** for communication with Layman through its REST API:
+
+- simple web client shipped with Layman
+- QGIS desktop client
+- HSLayers library
+
+</script></section><section data-markdown><script type="text/template">
+## Layman Key Features
+Layman`s **security system** uses two well-known concepts: authentication and authorization.
+
+<p style="text-align: left; margin-bottom: 0">Common configuration</p>
+
+- **authentication** based on widely used OAuth2 protocol
+- **authorization** ensuring that only owner of the data may edit it.
+
+</script></section><section data-markdown><script type="text/template">
+## Layman Key Features
+- Large data files can be easily uploaded from browser thanks to chunk upload.
+- Asynchronous processing ensures fast communication with REST API.
+- Processing tasks can be distributed on multiple servers.
+
+</script></section><section data-markdown><script type="text/template">
+## Layman Key Features
+- Layman stands on the shoulders of widely used programs like Flask, PostgreSQL, PostGIS, GDAL, GeoServer, Celery, and Redis.
+</script></section></section><section  data-markdown><script type="text/template">## Layman's Magic
+1. wait till all data is uploaded
+1. start asynchronous tasks
+  1. import vector data into PostgreSQL
+  1. publish vector data to GeoServer (WMS, WFS)
+  1. publish style to GeoServer (SLD, SE)
+  1. generate thumbnail
+  1. publish metadata to Micka (CSW)
+</script></section><section  data-markdown><script type="text/template">## What is Layman?
+### Summary
+- web service for publishing geospatial data online through REST API
+- developed since 2018 as part of Databio and Sieusoil projects
+- written in Python, published under GNU-GPL license at GitHub
+- [https://github.com/jirik/layman](https://github.com/jirik/layman)
+
+</script></section></div>
+    </div>
+
+    <script src="./js/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './plugin/zoom-js/zoom.js', async: true },
+        { src: './plugin/notes/notes.js', async: true },
+        { src: './plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

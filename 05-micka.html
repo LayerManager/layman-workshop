@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Interaction with Metadata (Micka)</title>
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/theme/moon.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/tomorrow-night-bright.css" />
+    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="./_assets/slides/theme/custom.css" />
+
+    <script>
+      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+## Interaction with Metadata (Micka)
+
+### Jiří Kozel
+
+Workshop 4
+
+<small>Big and Open Data and Innovative Hubs in Agriculture, Transport and Rural Development
+<br/>
+<br/>
+Czech University of Life Sciences, Prague
+<br/>
+<br/>
+January 29, 2020
+</small>
+</script></section><section  data-markdown><script type="text/template">## Workshop 4
+[https://github.com/jirik/layman-workshop](https://github.com/jirik/layman-workshop)
+
+<ul style="font-size: 80%">
+<li>Karel Charvát - Purpose of workshop</li>
+<li>Jiří Kozel - What is Layman and how it works</li>
+<li>Raitis Berzins - Map composition</li>
+<li>Jiří Kozel, Jiří Kvapil - How to install Layman in cloud</li>
+<li>Jiří Kozel - Layman API</li>
+<li>Jiří Kozel - Authentication and authorization</li>
+<li style="color: orange">Jiří Kozel - Interaction with Metadata (Micka)</li>
+<li>Jan Vrobel - QGIS plugins for accessing maps and map composition from server</li>
+<li>Jan Vrobel - QGIS plugin for Web data publishing using Layman</li>
+<li>Raitis Berzins - HSLayers NG as client for Layman</li>
+</ul>
+</script></section><section  data-markdown><script type="text/template">## WARNING!
+### This part is also little bit <span style="color: orange;">technical</span>!
+</script></section><section  data-markdown><script type="text/template">## Metadata
+- Layman is able to publish **partial metadata** records to OGC Catalogue Service Micka
+- Records are partial because Layman does not know all metadata properties
+- currently, only **Layer** metadata are published, and only on POST request
+  - full support in May 2020
+</script></section><section ><section data-markdown><script type="text/template">## Get information about single Layer
+1. Choose resource **Layer**, endpoint **Layer**, method **GET**
+1. Enter name of the layer to **Layer name** field
+  - `ne_10m_admin_0_countries`
+1. Click **Submit**
+
+</script></section><section data-markdown><script type="text/template">
+## Get information about single Layer
+
+```json
+{
+  ...
+  "metadata": {
+    "csw_url": "http://micka:80/csw",
+    "record_url": "http://104.248.252.23:3080/record/basic/m-a8c6f6f4-1254-49fd-8223-5ed8f4fa185f"
+  },
+  "name": "ne_10m_admin_0_countries",
+  ...
+}
+```
+</script></section></section><section  data-markdown><script type="text/template">## Show metadata record
+1. Copy `metadata.record_url` value and open this address in the browser
+
+![Micka](img/micka.png)
+</script></section><section  data-markdown><script type="text/template">## Edit metadata record in Micka
+5. Login using name **editor**, password **editor**
+5. Edit metadata record.
+</script></section></div>
+    </div>
+
+    <script src="./js/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './plugin/zoom-js/zoom.js', async: true },
+        { src: './plugin/notes/notes.js', async: true },
+        { src: './plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
