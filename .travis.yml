@@ -1,6 +1,8 @@
 language: node_js
 node_js:
 - '11'
+before_install:
+  - sudo apt-get -y install poppler-utils
 install:
 - npm install -g reveal-md
 before_deploy:
