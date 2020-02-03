@@ -1,4 +1,5 @@
 # Layman Workshop
+[![Build Status](https://travis-ci.org/jirik/layman-workshop.svg?branch=master)](https://travis-ci.org/jirik/layman-workshop)
 
 We will work on remote machines with Linux operating system during the workshop to ensure suitable and consistent environment.
 
