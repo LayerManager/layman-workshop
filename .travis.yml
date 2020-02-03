@@ -7,7 +7,7 @@ install:
 - npm install -g reveal-md
 before_deploy:
 - mkdir -p build
-- reveal-md slides/ --css slides/theme/custom.css -w --static build
+- make build-slides
 - touch build/.nojekyll
 - ls -l build
 deploy:
